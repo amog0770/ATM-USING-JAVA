@@ -1,0 +1,51 @@
+
+package aat;
+import java.util.*;
+import java.util.Scanner;
+
+public class atm{
+	public static void main(String[] args) {
+		int ch,deposit,withdraw,balance=1000;
+		System.out.println("=====WEL-COME TO ATM =====");
+		while(true) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("=================================================");
+		System.out.println("1)Amount To Be deposit");
+		System.out.println("2)Amount To Be Withdraw");
+		System.out.println("3)Balance In Your Account");
+		System.out.println("4)exit");
+		System.out.println("=================================================");
+		System.out.println("Enter Your Choice:"); 
+		ch=sc.nextInt();
+		switch(ch)
+		{
+		case 1:
+			System.out.println("Enter The Amount To Be Deposit:");
+			deposit=sc.nextInt();
+			balance=balance+deposit;
+			System.out.println("Deposit Is Successed");
+			break;
+		case 2:
+			System.out.println("Enter The Amount To Be Withdraw:");
+			withdraw=sc.nextInt();
+			if(withdraw>balance)
+			{
+				System.out.println("You Have Insufficent Balance to Withdraw");
+			}
+			else
+			{
+				System.out.println("Withdraw Successfull");
+				balance=balance-withdraw;
+			}
+			break;
+		case 3:
+			System.out.println("Your Balance Present In Account");
+			System.out.println(balance);
+				break;
+		case 4:
+			 System.exit(0);
+		}
+		}
+	}
+}
+	
